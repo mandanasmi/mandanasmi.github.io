@@ -137,6 +137,7 @@ span.highlight {
 }
 
 /* ================ The Timeline ================ */
+/* ================ The Timeline ================ */
 
 .timeline {
   position: relative;
@@ -413,6 +414,7 @@ span.highlight {
 
 }
 
+
 /* ================ Navbar ================ */
 
 /* ================ Scrollbar ================ */
@@ -463,3 +465,16 @@ students{list-style:none;padding:0}
 .students a:hover{color: #f09228; text-decoration: none}
 .students .current{font-size:.9em;text-align:center;color:#aaa;margin:.4em 0 .3em}
 .students .topics{font-size:.9em;text-align:center;color:#aaa;margin:.4em 0 .3em}
+
+/* ================ Bullet point alignment ================ */
+
+.news ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.news ul li {
+  text-indent: -1.5em;
+  padding-left: 1.5em;
+}
