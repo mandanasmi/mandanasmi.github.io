@@ -67,6 +67,9 @@ a {
   color: #1772d0;
   text-decoration: none;
 }
+.justified-text {
+  text-align: justify;
+}
 
 a:focus,
 a:hover {
