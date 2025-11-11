@@ -41,7 +41,7 @@
                     <p style="text-align:center"><name>Mandana Samiei</name></p>
                     </p>
                     <div class="justified-text"> 
-                    <p> I am a PhD candidate in Computer Science at <a href="https://mila.quebec/en/"> Mila - Quebec AI Institute </a>  and <a href="http://rl.cs.mcgill.ca/"> Reasoning and Learning Lab</a> at <a href="https://www.cs.mcgill.ca/">McGill University</a> in Montréal, where I am advised by <a href="https://rl.cs.mcgill.ca/people/doina-precup/"> Prof. Doina Precup</a> and <a href="https://mila.quebec/en/directory/blake-richards"> Prof. Blake Richards </a>. I am interested in designing AI systems that are able to learn and adapt continually, instead of mastering specific tasks they are able to learn general skills/features which can be reused given a new task/dataset/environment. I study the underlying models of such adaptive and robust generalizations. 
+                    <p> I am a 5th PhD student in Computer Science at <a href="https://mila.quebec/en/"> Mila - Quebec AI Institute </a>  and <a href="http://rl.cs.mcgill.ca/"> Reasoning and Learning Lab</a> at <a href="https://www.cs.mcgill.ca/">McGill University</a> in Montréal, where I am advised by <a href="https://rl.cs.mcgill.ca/people/doina-precup/"> Prof. Doina Precup</a> and <a href="https://mila.quebec/en/directory/blake-richards"> Prof. Blake Richards </a>. I am interested in designing AI systems that are able to learn and adapt continually, instead of mastering specific tasks they are able to learn general skills/features which can be reused given a new task/dataset/environment. I study the underlying models of such adaptive and robust generalizations. 
                     <p><b>Just as humans can continuously adapt, can AI agents achieve similar abilities?</b><p>
                     <p> My research centers on exploring how AI agents can efficiently learn abstractions of intricate sensory observations of the world, enabling them to reason, plan, and make decisions.
                     Recently, I find myself more and more interested in understanding the role of structure in designing adaptable agents, which can recieve observations/images and output actions/policy or human readable texual content. 
@@ -208,37 +208,84 @@
         <br>
         <br>
         <br>
-
+        
       <section id="research" class="research">
           <h2>Research and Publications</h2>
           <div class="research-item">
+            <h3>Learning Schemas in Reinforcement Learning: bottleneck structure discovery.</h3>
+            <p>In this work we show how schemas can be learned in RL by discovering the bottleneck structure of the task.</p>
+            <p>Under submission <a href="https://www.nature.com/ncomms/" id="nature"> Nature communications</a> </p>
+            <p> <b>Mandana Samiei</b>, Doina Precup and Blake A. Richards </p> 
+            <div class="paper-links">
+              <a href="#" class="paper-btn"; cursor: not-allowed;">
+                <i class="fas fa-file-alt"></i> Under submission 
+              </a>
+            </div>
+            </div>
+
+            <div class="research-item">
+              <h3>The Schema Spectrum: Explicit, Implicit, and Emergent Structures in AI and the Brain.</h3>
+              <p>This perspective uses recent results in generative AI models to reconsider two standard
+                assumptions in schema theory: (1) that schemas exist as explicit objects in the brain, and (2) that schemas are
+                categorically distinct from episodic memories. This is based on the observation that large language models
+                exhibit many phenomena reminiscent of schematic learning in the absence of any explicit engineering as such,
+                suggesting that schemas may be an emergent property of distributed representations in neural networks.</p>
+              <p>Under review at <a href="https://www.cell.com/neuron/home/" id="neuron"> Neuron</a> </p>
+              <p> <b>Mandana Samiei</b>, Doina Precup and Blake A. Richards </p> 
+              <div class="paper-links">
+                <a href="data/Papers/Neuron/Schemas in AI and Neuroscience.pdf" class="paper-btn" target="_blank">
+                  <i class="fas fa-file-pdf"></i> Paper
+                </a>
+              </div>
+            </div>
+
+            <div class="research-item">
+              <h3>Language Agents Mirror Human Causal Reasoning Biases. How Can We Help Them Think Like Scientists?</h3>
+              <p> Continual Learning solutions often treat multitask learning as an upper-bound of what the learning process can achieve. This is a natural assumption, given that this objective directly addresses the catastrophic forgetting problem, which has been a central focus in early works. However, depending on the nature of the distributional shift in the data, the multi-task solution is not always optimal for the broader continual learning problem.
+              We draw on principles from online learning to formalize the limitations of multitask objectives.</p>
+              <p> Anthony GX-Chen, Dongyan Lin*, <b>Mandana Samiei*</b>, Doina Precup, Blake Richards, Rob Fergus, Kenneth Marino </p>
+              *equal contribution, ordered alphabetically.
+              <p>Presented at <a href="https://colmweb.org/" id="colm"> Conference on Language Modelling (COLM) 2025 </a> </p>
+              <div class="paper-links">
+                <a href="https://arxiv.org/abs/2505.09614" class="paper-btn";">
+                  <i class="fas fa-file-alt"></i> Paper
+                </a>
+              </div>
+              </div>
+
+          <div class="research-item">
             <h3>The Role of Schemas in Reinforcement Learning: Insights and Implications for Generalization</h3>
             <p>In cognitive psychology, schemas are considered to be "building blocks" of cognition, shaping how people view the world and interact with it. The goal of this paper is to propose a method for learning schemas in RL. We argue that, by representing tasks through schemas, agents can more effectively generalize from past experiences and adapt to new, unseen environments with minimal data.</p>
-            <p>Presented at <a href="https://rldm.org/" id="hypothesis"> Reinforcement Learning and Decision Making - RLDM 2025 </a> </p>
-            <p> with Doina Precup and Blake A. Richards </p> 
+            <p>Presented at <a href="https://rldm.org/" id="rldm"> Reinforcement Learning and Decision Making - RLDM 2025 </a> </p>
+
+            <p> <b>Mandana Samiei</b>, Doina Precup and Blake A. Richards </p> 
             <div class="paper-links">
               <a href="data/Papers/RLDM/schema_rldm2025.pdf" class="paper-btn" target="_blank">
                 <i class="fas fa-file-pdf"></i> Paper
               </a>
             </div>
           </div>
+
           <div class="research-item">
-            <h3>Beyond Multitask learning in Continual Learning</h3>
-            <p> Continual Learning solutions often treat multitask learning as an upper-bound of what the learning process can achieve.
-              This is a natural assumption, given that this objective directly addresses the catastrophic forgetting problem, which has been a central focus in early works. However, depending on the nature of the distributional shift in the data, the multi-task solution is not always optimal for the broader continual learning problem.
-              We draw on principles from online learning to formalize the limitations of multitask objectives.</p>
-            <p> with Giulia Lanzillotta, Claire Vernade, and Razvan Pascanu</p>
+            <h3>A conceptual analysis of continual learning objectives.</h3>
+            <p> Continual Learning solutions often treat multitask learning as an upper-bound of what the learning process can achieve. This is a natural assumption, given that this objective directly addresses the catastrophic forgetting problem, which has been a central focus in early works. However, depending on the nature of the distributional shift in the data, the multi-task solution is not always optimal for the broader continual learning problem.
+            We draw on principles from online learning to formalize the limitations of multitask objectives.</p>
+            <p> Giulia Lanzillotta, <b>Mandana Samiei</b>, Claire Vernade, and Razvan Pascanu</p>
+            <p>Under submission <a href="https://jmlr.org/tmlr/" id="tmlr"> TMLR </a> </p>
+
             <div class="paper-links">
               <a href="#" class="paper-btn"; cursor: not-allowed;">
-                <i class="fas fa-file-alt"></i> Under submission
+                <i class="fas fa-file-alt"></i> Under submission 
               </a>
             </div>
             </div>
+              
           <div class="research-item">
             <h3>Testing Causal Hypotheses Through Hierarchical Reinforcement Learning</h3>
             <p>we propose hierarchical reinforcement learning (HRL) as a key ingredient to building agents that can systematically generate and test hypotheses that enables transferrable learning of the world, and discuss potential implementation strategies. </p> 
             <p>Presented at <a href="https://imol-workshop.github.io/" id="hypothesis"> Intrinsically Motivated Open-ended Learning - IMOL </a> Workshop at NeurIPS 2024 as a <font style="color:#ff5733"><a href="https://drive.google.com/file/d/1WVwe5yRYVv7xvP8lvSznRU3p4IsOdtaV/view?usp=drive_link">poster</a></font>.</p>
-            <p>with Dongyan Lin and Anthony Chen</p>
+            <p> Anthony Chen*, Dongyan Lin*, <b>Mandana Samiei*</b></p>
+            *equal contribution, ordered alphabetically.
             <div class="paper-links">
               <a href="https://openreview.net/forum?id=ZqNcJ8uuHT" class="paper-btn" target="_blank">
                 <i class="fas fa-file-pdf"></i> Paper
@@ -261,7 +308,7 @@
               </a>
             </div>
           </div>
-          <div class="research-item">
+          <!-- <div class="research-item">
             <h3>Possible Principles for Aligned Structure Learning Agents</h3>
             <p> This paper offers a roadmap for the development of scalable aligned artificial intelligence (AI) from
               first principle descriptions of natural intelligence.</p>
@@ -271,7 +318,7 @@
                 <i class="fas fa-file-pdf"></i> Paper
               </a>
             </div>
-            </div>
+            </div> -->
           <div class="research-item">
             <h3>The Cancer Genome Atlas Program (TCGA) Clinical Benchmark </h3>
             <p> This paper provide a benchmark to study cancer and gene expression relations. Tasks are a combination of clinical features and cancer study. 
@@ -522,13 +569,13 @@
     <h2>Conference Photo Gallery</h2>
     <div class="gallery">
       <a href="#img1"><img src="images/events/wiml24neurips.JPG" alt="wiml Neurips 2024"></a>
-      <!--<a href="#img2"><img src="images/events/wiml-breakfast-neurips24.jpg" alt="Conference 3"></a>-->
+      <a href="#img2"><img src="images/events/AC-2025.PNG" alt="AC 2025"></a>
       <a href="#img3"><img src="images/events/eeml1.jpg" alt="eeml TAs"></a>
       <a href="#img4"><img src="images/events/M2L_2025.jpeg" alt="eeml all"></a>
       <a href="#img5"><img src="images/events/collas25.jpeg" alt="collas 2025"></a>
     </div>
     <p class="gallery-caption">
-    A selection of photos from various conferences I have attended, including Women in ML workshop at NeurIPS 2024 in Vancouver, EEML 2024 Summer School in Novi Sad, Serbia , M2L 2025 Summer School in Split, Croatia, and CoLLAs 2024 in Pisa, Italy.
+    A selection of photos from various conferences I have attended, including Women in ML workshop at NeurIPS 2024 in Vancouver, EEML 2024 Summer School in Novi Sad, Serbia , M2L 2025 Summer School in Split, Croatia, Analytical Connectionism (AC) 2025, in London, and CoLLAs 2024 in Pisa, Italy.
     </p>
   </div>
 
@@ -537,10 +584,10 @@
     <a href="#" class="close">&times;</a>
     <img src="images/events/wiml24neurips.JPG" alt="WiML workshop at NeurIPS 2024">
   </div>
-  <!--<div id="img2" class="lightbox">
+  <div id="img2" class="lightbox">
     <a href="#" class="close">&times;</a>
-    <img src="images/events/wiml-breakfast-neurips24.jpg" alt="WiML Breakfast at NeurIPS 2024">
-  </div>-->
+    <img src="images/events/AC-2025.PNG" alt="AC-2025">
+  </div>
   <div id="img3" class="lightbox">
     <a href="#" class="close">&times;</a>
     <img src="images/events/eeml1.jpg" alt="EEML 2024">
