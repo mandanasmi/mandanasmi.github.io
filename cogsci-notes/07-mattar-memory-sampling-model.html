@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marcelo Mattar — A resource-rational model of memory-guided deliberation</title>
+<style>
+  body{font-family: Georgia, 'Times New Roman', serif; max-width:720px;margin:40px auto;padding:0 24px;line-height:1.65;color:#222;background:#fdfcf9;}
+  h1{font-size:1.7em;border-bottom:2px solid #333;padding-bottom:10px;margin-bottom:4px;}
+  .meta{color:#666;font-style:italic;margin-bottom:28px;font-size:0.95em;}
+  h2{font-size:1.25em;margin-top:1.8em;color:#333;}
+  ul{padding-left:1.3em;}
+  li{margin-bottom:0.6em;}
+  p{margin:0.9em 0;}
+  .quote{border-left:3px solid #999;padding-left:14px;margin:1.2em 0;color:#444;font-style:italic;}
+</style>
+</head>
+<body>
+
+<h1>A resource-rational model of memory-guided deliberation, watched through eye movements</h1>
+<p class="meta">Speaker: Marcelo Mattar</p>
+
+<p>Mattar started from an earlier finding, done with Jonathan Nicholas. In a "bank or leave" task, people encode a handful of items (each with a color, shape, category, and a reward), and later have to decide whether to accept or reject an offer defined over some subset of those items, say "all the animals," by recalling and summing up the relevant rewards. Reaction time scaled with how many relevant memories a person had to draw on, but only when those memories actually mattered for the decision. That was a nice hint that people were genuinely retrieving memories to compute the offer's value, but it was too coarse a signal to say much about how the retrieval process actually unfolds moment to moment.</p>
+
+<h2>Watching people think with their eyes</h2>
+<p>So his lab turned to eye tracking, building on the "looking at nothing" effect from the memory literature: when people encode an item at a particular screen location and are later asked to recall it, their gaze drifts back to that now-blank location. In the task, six items are shown at random screen positions during encoding, then a distractor phase rules out simple visual rehearsal, then a decision phase asks people to accept or reject an offer whose value is the sum of a relevant subset of the encoded items. People manage about 65% accuracy. A final free-recall phase, where people say the items out loud, does double duty. It shows how much people actually remembered, and it validates the eye-tracking method, since gaze reliably returns to an item's original location in the second or so before someone starts talking about it.</p>
+<p>During the decision phase itself, gaze tracked the deliberation nicely. People looked more at items relevant to the current offer than irrelevant ones. When they ended up accepting an offer they'd looked more at the positive-reward items, and when rejecting, more at the negative ones. A simple classifier using just the first two or three fixations could predict the eventual choice at about 60% accuracy, meaning a lot of the decision's fingerprint shows up in the very first glances.</p>
+
+<h2>Modeling the retrieval policy</h2>
+<p>To explain what actually drives those fixations, the lab built a model where an agent's policy covers both external actions and an internal one, choosing to sample a particular memory. Sampling costs something: a baseline time cost, plus a "motor" cost related to how far the eyes have to travel, which turned out to be necessary to explain why people prefer to resample nearby locations. In return, sampling gives you back the item's estimated reward and its estimated relevance.</p>
+<p>Solving for the exact optimal version of this policy directly isn't tractable. Even with only six items, the space of possible retrieval sequences is enormous. So the lab trained a recurrent neural network via meta-reinforcement learning to approximate it instead. What's striking is that the network's internal state, once trained, can be decoded to recover the same statistics a Bayesian ideal observer would need to track: the posterior mean and variance of each item's reward, and the posterior probability that it's relevant. That's evidence the network converged on something structurally similar to the resource-rational solution, not just a different way of getting the right answer.</p>
+
+<div class="quote">The network matches human retrieval accuracy, matches the shape of the cumulative fixation-time curve (longest fixations happen early, more time gets spent on ambiguous near-zero-value items), and matches which factors predict fixations in both people and the model: preferring less-recently-sampled items, and preferring nearby locations.</div>
+
+<p>One place the model and people diverge is that only people show a classic temporal contiguity effect, a bias toward resampling items that were originally encoded close together in time. The network doesn't show this, because it was never given any model of encoding to begin with. Only the deliberation and retrieval process was modeled, and that residual gap gets attributed to unmodeled encoding effects rather than a flaw in the retrieval account itself.</p>
+
+<p>He closed by crediting Jonathan Nicholas and a lab collaborator for the project, and mentioned Jonathan would be presenting this same work, in more depth, at a poster session later that week.</p>
+
+<h2>A few questions after</h2>
+<p>Someone asked whether classic primacy and recency effects would show up more strongly in a harder version of the task with many more items. His guess was no, mostly because in classic free-recall studies every item is equally valuable, whereas here items carry real decision-relevant value that dominates the retrieval order. Someone else wondered whether people might be replaying the exact order items were originally shown rather than purely minimizing travel distance across the screen, an interesting open question he agreed was worth testing directly. A last question asked whether people show any asymmetry between equally informative highly-positive and highly-negative rewards. No clear signature turned up in the data either way.</p>
+
+<p style="font-size:0.85em;color:#777;font-style:italic;margin-top:2em;border-top:1px solid #ddd;padding-top:10px;">There was a lot of modeling detail packed into this one, so a few of the technical specifics may not be exactly right.</p>
+
+</body>
+</html>

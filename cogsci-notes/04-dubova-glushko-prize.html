@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marina Dubova — Glushko Prize lecture: rethinking scientific discovery</title>
+<style>
+  body{font-family: Georgia, 'Times New Roman', serif; max-width:720px;margin:40px auto;padding:0 24px;line-height:1.65;color:#222;background:#fdfcf9;}
+  h1{font-size:1.7em;border-bottom:2px solid #333;padding-bottom:10px;margin-bottom:4px;}
+  .meta{color:#666;font-style:italic;margin-bottom:28px;font-size:0.95em;}
+  h2{font-size:1.25em;margin-top:1.8em;color:#333;}
+  ul{padding-left:1.3em;}
+  li{margin-bottom:0.6em;}
+  p{margin:0.9em 0;}
+  .quote{border-left:3px solid #999;padding-left:14px;margin:1.2em 0;color:#444;font-style:italic;}
+</style>
+</head>
+<body>
+
+<h1>Glushko Prize lecture: rethinking scientific discovery and what "learning" even means</h1>
+<p class="meta">Speaker: Marina Dubova, this year's Glushko Dissertation Prize recipient</p>
+
+<p>Dubova opened with something personal. Seven years ago she'd been denied a visa and couldn't attend her first Cognitive Science Society meeting, posted about it on Twitter to her one follower, and the resulting attention led the Society to introduce a policy rotating conference locations every few years to make the meeting more globally accessible. This year was the first year that policy actually took effect, and she was visibly moved to be standing there because of it. She thanked her advisor, Rob Goldstone, and collaborators including Sabina Sloman.</p>
+
+<p>Her framing for the whole talk: around 2019 everyone was worried about the replication crisis in psychology, results that don't hold up. She'd become increasingly bothered by something upstream of that though, a conceptual crisis, where we're not even sure we know what we're supposed to be studying, or whether the standard rules of the scientific method we take for granted are actually justified by any evidence about how learning works, rather than just assumed.</p>
+
+<h2>Simulated communities of scientists</h2>
+<p>With Goldstone, she built a model where simulated agents inhabit a world structured as a high-dimensional multivariate Gaussian, a "ground truth," and collect data by picking a variable to fix and observing a conditional sample. Agents build theories, which are simplified compressions of the data they've collected, and share theories or data with each other.</p>
+<p>She used this to compare experimentation strategies: confirmation-driven (design experiments to confirm your own theory), disagreement-driven, and more exploratory strategies like random or novelty-seeking search. The trick was measuring two different kinds of performance. Perceived performance, meaning how well an agent's theory fits the data it has actually collected. And actual performance, meaning how well it fits the true underlying distribution, which you can only check because it's a simulation.</p>
+<p>The result was that strategies that look best by perceived performance, confirmation-driven experimentation especially, are often the worst generalizers. They look impressive because the agent has boxed itself into a narrow, self-consistent slice of the space that it never leaves. More exploratory strategies, like random or novelty-driven search, generalize far better to the true underlying structure, even though they look messier along the way. The ranking almost completely reverses depending on which kind of performance you're looking at.</p>
+<p>She and Goldstone followed this up with real neuroscientists, giving them different conceptual framings of an unfamiliar system and watching what experiments they chose to run next. Conceptual expectations clearly shaped experimental choices, in ways that mapped onto the disagreement-versus-confirmation distinction from the simulations. Those expectations helped when they happened to be accurate, and hurt when they were wrong.</p>
+
+<h2>Excess capacity learning</h2>
+<p>The second half of the talk, done with Sabina Sloman, pushed on something more fundamental: does learning a good theory always require compressing your experience down into something simpler? The standard picture, which she called the constrained-capacity view, says yes. A theory is a lossy compression of the data, like fitting a straight line through a cubic function's output, or an autoencoder squeezing information through a narrow bottleneck.</p>
+<p>She laid out three regimes. Constrained capacity: not enough room to fit everything, so you have to simplify, the classic view. Sufficient capacity: just enough room to memorize everything exactly, which risks catastrophic overfitting, like a twentieth-degree polynomial through twenty data points. And excess capacity: far more room than you'd need to memorize everything, a thousand-degree polynomial say, which sounds like it should be an overfitting disaster.</p>
+<div class="quote">What's strange, and what modern machine learning has shown again and again over the last five or six years, is that systems with excess capacity often generalize best of all, even though they can and do memorize every individual data point precisely.</div>
+<p>She and Sloman have written this up as a target article, now out in Behavioral and Brain Sciences, with a set of diagnostic criteria for figuring out whether a given learner in a given task is operating with constrained, sufficient, or excess capacity, and what that implies about how it will generalize. She was careful to say the dissertation doesn't answer the big questions so much as open them up for other people to run with.</p>
+
+<h2>A couple of questions after</h2>
+<p>One question pushed on how you'd tell meaningful experimental variation apart from irrelevant noise when designing a sampling strategy in a real, structured world rather than a simulation. She agreed this was a real limitation of the simulations and an open question she wants to study further. Another asked whether this connects to Bayesian model averaging, since it also avoids collapsing onto one possibly-wrong guess. She thought the analogy was a good intuition, closer to how Bayesian inference preserves many hypotheses rather than committing to one, versus frequentist point estimates, but wasn't sure of the precise technical relationship.</p>
+
+<p style="font-size:0.85em;color:#777;font-style:italic;margin-top:2em;border-top:1px solid #ddd;padding-top:10px;">I was scribbling fast during the personal parts of this one, so some of the biographical details might not be word for word.</p>
+
+</body>
+</html>
