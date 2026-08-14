@@ -1,45 +1,52 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Tomer Ullman — Why cognitive-science-inspired benchmarks keep failing us</title>
-<style>
-  body{font-family: Georgia, 'Times New Roman', serif; max-width:720px;margin:40px auto;padding:0 24px;line-height:1.65;color:#222;background:#fdfcf9;}
-  h1{font-size:1.7em;border-bottom:2px solid #333;padding-bottom:10px;margin-bottom:4px;}
-  .meta{color:#666;font-style:italic;margin-bottom:28px;font-size:0.95em;}
-  h2{font-size:1.25em;margin-top:1.8em;color:#333;}
-  ul{padding-left:1.3em;}
-  li{margin-bottom:0.6em;}
-  p{margin:0.9em 0;}
-  .quote{border-left:3px solid #999;padding-left:14px;margin:1.2em 0;color:#444;font-style:italic;}
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Tomer Ullman — Why cognitive-science-inspired benchmarks keep failing us</title>
+  <meta name="author" content="Mandana Samiei">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="../images/personal/mandana-circle.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
+  <div class="content">
+    <p class="note-nav"><a href="index.html"><i class="fas fa-arrow-left"></i> All CogSci 2026 notes</a> &nbsp;&middot;&nbsp; <a href="../index.html"><i class="fas fa-home"></i> Main page</a></p>
 
-<h1>Why cognitive-science-inspired benchmarks keep failing us</h1>
-<p class="meta">Speaker: Tomer Ullman, billed as a rant, and it was</p>
+    <h1>Why cognitive-science-inspired benchmarks keep failing us</h1>
+    <p class="meta">Speaker: Tomer Ullman, billed as a rant, and it was &middot; CogSci 2026, Rio de Janeiro</p>
 
-<p>Ullman said up front he'd rant for about ten minutes about benchmarks, and that this was a caricature, not aimed at any one person. He called it an amalgamation of a dynamic he's watched play out across the field for a decade.</p>
+    <div class="justified-text">
 
-<h2>The Ali and Kogi story</h2>
-<p>He set up a running bit. Ali, an AI builder, has made a machine called Bob and wants to know if it's smart. Kogi, a cognitive scientist, keeps proposing tests. First: can it play chess? Ali comes back forty years later, yes, it beats grandmasters. Kogi is impressed until she asks how it works and finds out it's evaluating 200 million moves a second. Nothing like how a person plays, and not something anyone would call intelligent on those terms. Kogi tries again: can it recognize a cat in a photo? Yes. But nobody knows how, and a one-pixel perturbation can flip the answer. Then image captioning, surely a system can't caption a novel scene without real understanding, except it can, having been trained on a huge number of image-caption pairs, and it falls apart the moment you show it something just outside that distribution, like a pizza being avoided instead of eaten.</p>
-<p>Every time, instead of concluding the underlying capacity isn't there, the field just reaches for a new benchmark. Ullman called this a shell game we're playing on ourselves. We start out asking whether a machine understands something, vision, theory of mind, whatever, but we never test that directly, because we don't actually know how to specify it. So we cash it out as an input-output benchmark instead, and the benchmark can always be passed by more than one kind of algorithm. Some genuinely human-like, some completely dumb. Passing tells you almost nothing about which one you're looking at.</p>
+    <p>Ullman said up front he'd rant for about ten minutes about benchmarks, and that this was a caricature, not aimed at any one person. He called it an amalgamation of a dynamic he's watched play out across the field for a decade.</p>
 
-<h2>The chocolate-bag example</h2>
-<p>His clearest case was the classic Sally-Anne false-belief task, retold as popcorn in a bag labeled chocolate. GPT-3, a few years back, could complete the story correctly: Sally thinks the bag contains chocolate, because that's what the label says, even though it's actually popcorn. Some people concluded, by the logic of benchmarks, that this meant the model had theory of mind.</p>
-<p>But if you actually cared about theory of mind, small perturbations that shouldn't matter for someone who genuinely understands beliefs should matter a lot here. What if the bag is transparent? What if Sally can't read? What if a friend already told her the truth? None of these moved the model's answer the way they should have. Not until those specific perturbed examples got folded into training data, at which point the model started passing those too, and nobody concluded anything different about theory of mind at that point either.</p>
+    <h2>The Ali and Kogi story</h2>
+    <p>He set up a running bit. Ali, an AI builder, has made a machine called Bob and wants to know if it's smart. Kogi, a cognitive scientist, keeps proposing tests. First: can it play chess? Ali comes back forty years later, yes, it beats grandmasters. Kogi is impressed until she asks how it works and finds out it's evaluating 200 million moves a second. Nothing like how a person plays, and not something anyone would call intelligent on those terms. Kogi tries again: can it recognize a cat in a photo? Yes. But nobody knows how, and a one-pixel perturbation can flip the answer. Then image captioning, surely a system can't caption a novel scene without real understanding, except it can, having been trained on a huge number of image-caption pairs, and it falls apart the moment you show it something just outside that distribution, like a pizza being avoided instead of eaten.</p>
+    <p>Every time, instead of concluding the underlying capacity isn't there, the field just reaches for a new benchmark. Ullman called this a shell game we're playing on ourselves. We start out asking whether a machine understands something, vision, theory of mind, whatever, but we never test that directly, because we don't actually know how to specify it. So we cash it out as an input-output benchmark instead, and the benchmark can always be passed by more than one kind of algorithm. Some genuinely human-like, some completely dumb. Passing tells you almost nothing about which one you're looking at.</p>
 
-<h2>Illusions and cartoons</h2>
-<p>He ran through a few more examples for fun. Classic visual illusions (Müller-Lyer lines, the Ebbinghaus circles, the duck-rabbit) that vision-language models sometimes reproduce and sometimes don't, in ways decoupled from any real perceptual mechanism. Passing a newer illusion variant seemed to track only whether that variant had shown up in training. He showed two cartoons, one relying on a countdown timer next to a plane about to crash into a building, one about a dog getting a face transplant, where a state-of-the-art model confidently explained "the joke" while completely missing the actual point. Then a video clip of a wave hitting some skulls, where the model failed basic object permanence in a way no person watching would.</p>
+    <h2>The chocolate-bag example</h2>
+    <p>His clearest case was the classic Sally-Anne false-belief task, retold as popcorn in a bag labeled chocolate. GPT-3, a few years back, could complete the story correctly: Sally thinks the bag contains chocolate, because that's what the label says, even though it's actually popcorn. Some people concluded, by the logic of benchmarks, that this meant the model had theory of mind.</p>
+    <p>But if you actually cared about theory of mind, small perturbations that shouldn't matter for someone who genuinely understands beliefs should matter a lot here. What if the bag is transparent? What if Sally can't read? What if a friend already told her the truth? None of these moved the model's answer the way they should have. Not until those specific perturbed examples got folded into training data, at which point the model started passing those too, and nobody concluded anything different about theory of mind at that point either.</p>
 
-<h2>It happens with people too</h2>
-<p>In his last couple of minutes he pointed out this dynamic isn't unique to machines. Institutions do the same thing to people. We want something like "is this a good university," can't measure that directly, so we cash it out as rankings, and then people optimize for the rankings instead. The reason it's less visible with people, he said, is that we're generally more cooperative about inferring each other's real goals. Benchmarking a model doesn't extend it that same good faith.</p>
+    <h2>Illusions and cartoons</h2>
+    <p>He ran through a few more examples for fun. Classic visual illusions (Müller-Lyer lines, the Ebbinghaus circles, the duck-rabbit) that vision-language models sometimes reproduce and sometimes don't, in ways decoupled from any real perceptual mechanism. Passing a newer illusion variant seemed to track only whether that variant had shown up in training. He showed two cartoons, one relying on a countdown timer next to a plane about to crash into a building, one about a dog getting a face transplant, where a state-of-the-art model confidently explained "the joke" while completely missing the actual point. Then a video clip of a wave hitting some skulls, where the model failed basic object permanence in a way no person watching would.</p>
 
-<div class="quote">He was careful to include himself in the critique. He's built exactly this kind of benchmark himself in the past, knowing full well models would eventually pass it without the underlying capacity being there.</div>
+    <h2>It happens with people too</h2>
+    <p>In his last couple of minutes he pointed out this dynamic isn't unique to machines. Institutions do the same thing to people. We want something like "is this a good university," can't measure that directly, so we cash it out as rankings, and then people optimize for the rankings instead. The reason it's less visible with people, he said, is that we're generally more cooperative about inferring each other's real goals. Benchmarking a model doesn't extend it that same good faith.</p>
 
-<p>He closed with a pointer to unpublished work trying to move past yet another benchmark and toward steering models directly, something closer to giving pragmatic instructions the way you'd tell a person "do this thing, and you know what I mean," rather than scoring pass or fail on a static test.</p>
+    <div class="quote">He was careful to include himself in the critique. He's built exactly this kind of benchmark himself in the past, knowing full well models would eventually pass it without the underlying capacity being there.</div>
 
-<p style="font-size:0.85em;color:#777;font-style:italic;margin-top:2em;border-top:1px solid #ddd;padding-top:10px;">This was a fast, joke-heavy talk, so I probably didn't catch every detail exactly as said. Take the specifics with a grain of salt.</p>
+    <p>He closed with a pointer to unpublished work trying to move past yet another benchmark and toward steering models directly, something closer to giving pragmatic instructions the way you'd tell a person "do this thing, and you know what I mean," rather than scoring pass or fail on a static test.</p>
 
+    </div>
+
+    <p class="footnote">This was a fast, joke-heavy talk, so I probably didn't catch every detail exactly as said. Take the specifics with a grain of salt.</p>
+
+    <div class="paper-links">
+      <a href="index.html" class="paper-btn"><i class="fas fa-book-open"></i> Back to all notes</a>
+    </div>
+  </div>
 </body>
+
 </html>

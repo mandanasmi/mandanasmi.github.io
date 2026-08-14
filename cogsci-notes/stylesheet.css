@@ -1,0 +1,194 @@
+/* ============================================================
+   CogSci 2026 conference notes — shared stylesheet
+   Mirrors the look of the main site (../stylesheet.css):
+   Lato, white content card on light grey, #1772d0 links with
+   #f09228 hover, #213c7a headings, .research boxes, .paper-btn.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body,
+td,
+th,
+tr,
+p,
+a,
+li {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 25px 10px;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+h1 {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  color: #213c7a;
+  font-size: 26px;
+  margin: 0.5em 0 0.3em;
+}
+
+h2 {
+  color: #213c7a;
+}
+
+p {
+  line-height: 1.6;
+}
+
+li {
+  line-height: 1.6;
+  margin-bottom: 0.6em;
+}
+
+.justified-text {
+  text-align: justify;
+}
+
+.note-nav {
+  font-size: 13px;
+  margin: 0 0 1.5em;
+}
+
+.meta {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 2em;
+}
+
+.quote {
+  border-left: 3px solid #1772d0;
+  padding: 2px 0 2px 14px;
+  margin: 1.2em 0;
+  color: #444;
+  font-style: italic;
+}
+
+.caveat {
+  background: #e3f2fd;
+  border-left: 4px solid #1772d0;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin: 1.5em 0 2em;
+  color: #444;
+}
+
+.footnote {
+  font-size: 0.85em;
+  color: #777;
+  font-style: italic;
+  margin-top: 2em;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* ============ Research-style listing (same as main page) ============ */
+.research {
+  background: #e3f2fd;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.research h2 {
+  margin-top: 0;
+}
+
+.research-item {
+  margin-bottom: 1.5rem;
+}
+
+.research-item:last-child {
+  margin-bottom: 0;
+}
+
+.research-item h3 {
+  margin: 0;
+}
+
+.research-item p {
+  margin: 0.2rem 0 0;
+}
+
+.research-item a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.research-item a:hover {
+  text-decoration: underline;
+}
+
+.research-item h3 a {
+  color: #213c7a;
+}
+
+.research-item h3 a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+/* ============ Paper link buttons (same as main page) ============ */
+.paper-links {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.paper-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #1772d0;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.paper-btn:hover {
+  background-color: #f09228;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.paper-btn i {
+  margin-right: 0.3rem;
+}
+
+.page-footer {
+  text-align: center;
+  font-size: small;
+  color: #666;
+  margin-top: 2.5em;
+}

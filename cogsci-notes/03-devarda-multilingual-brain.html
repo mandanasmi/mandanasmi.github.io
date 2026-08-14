@@ -1,42 +1,49 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Andrea Gregor de Varda — Do multilingual models and brains share a format?</title>
-<style>
-  body{font-family: Georgia, 'Times New Roman', serif; max-width:720px;margin:40px auto;padding:0 24px;line-height:1.65;color:#222;background:#fdfcf9;}
-  h1{font-size:1.7em;border-bottom:2px solid #333;padding-bottom:10px;margin-bottom:4px;}
-  .meta{color:#666;font-style:italic;margin-bottom:28px;font-size:0.95em;}
-  h2{font-size:1.25em;margin-top:1.8em;color:#333;}
-  ul{padding-left:1.3em;}
-  li{margin-bottom:0.6em;}
-  p{margin:0.9em 0;}
-  .quote{border-left:3px solid #999;padding-left:14px;margin:1.2em 0;color:#444;font-style:italic;}
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Andrea Gregor de Varda — Do multilingual models and brains share a format?</title>
+  <meta name="author" content="Mandana Samiei">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="../images/personal/mandana-circle.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
+  <div class="content">
+    <p class="note-nav"><a href="index.html"><i class="fas fa-arrow-left"></i> All CogSci 2026 notes</a> &nbsp;&middot;&nbsp; <a href="../index.html"><i class="fas fa-home"></i> Main page</a></p>
 
-<h1>Do multilingual models and brains share a format?</h1>
-<p class="meta">Speaker: Andrea Gregor de Varda</p>
+    <h1>Do multilingual models and brains share a format?</h1>
+    <p class="meta">Speaker: Andrea Gregor de Varda &middot; CogSci 2026, Rio de Janeiro</p>
 
-<p>De Varda started with a simple complaint about the "are language models like brains" literature: almost all of it is done in English, with maybe a handful of other high-resource languages thrown in. He wanted to use multilingual models, trained jointly on hundreds of languages at once, to ask two things. Do these models actually share circuitry across languages, or keep separate machinery per language? And if there is shared circuitry, does it look anything like what the human brain does?</p>
+    <div class="justified-text">
 
-<h2>Shared units across languages</h2>
-<p>To test the first question he used subject-verb agreement, the grammatical requirement that a subject and its verb match in number ("the writer smiles" vs. "the writers smile"), across five languages: English, Russian, German, French, and one more. He ranked model units by how much they contributed to this computation in each language, took the top hundred or so per language, and asked how much overlap there was between languages.</p>
-<p>The overlap was far above chance for every pair of languages, and stayed well above chance for three-way, four-way, and five-way intersections too. Multilingual models reuse a substantial shared subset of units to handle grammatical agreement across languages, rather than keeping fully separate circuits per language. It's similar to what's known about the human language network, where the same brain regions light up regardless of which language a bilingual speaker happens to be using.</p>
+    <p>De Varda started with a simple complaint about the "are language models like brains" literature: almost all of it is done in English, with maybe a handful of other high-resource languages thrown in. He wanted to use multilingual models, trained jointly on hundreds of languages at once, to ask two things. Do these models actually share circuitry across languages, or keep separate machinery per language? And if there is shared circuitry, does it look anything like what the human brain does?</p>
 
-<h2>Brain alignment across 21 languages</h2>
-<p>The second half of the talk used an encoding-model approach. Native speakers of many different languages listened to translated passages (Alice in Wonderland was one source) during fMRI. A speech-to-text model transcribed the audio, activations were pulled from a multilingual model for those same passages, and a mapping was learned from model activations to brain responses. In total this covered 21 languages across 7 language families, which he described as the largest study of its kind.</p>
-<p>Two conditions were compared. In the within-language condition, the encoding model was trained and tested on the same language, say 90% of the Mandarin data to train and 10% held out to test. In the across-language condition, the model was trained entirely on one language, say Mandarin, and tested on a completely different language, say English, with zero training data from English. Both conditions produced high, well-above-chance prediction accuracy in the brain's language network. The across-language, zero-shot condition worked almost as well as the within-language one.</p>
+    <h2>Shared units across languages</h2>
+    <p>To test the first question he used subject-verb agreement, the grammatical requirement that a subject and its verb match in number ("the writer smiles" vs. "the writers smile"), across five languages: English, Russian, German, French, and one more. He ranked model units by how much they contributed to this computation in each language, took the top hundred or so per language, and asked how much overlap there was between languages.</p>
+    <p>The overlap was far above chance for every pair of languages, and stayed well above chance for three-way, four-way, and five-way intersections too. Multilingual models reuse a substantial shared subset of units to handle grammatical agreement across languages, rather than keeping fully separate circuits per language. It's similar to what's known about the human language network, where the same brain regions light up regardless of which language a bilingual speaker happens to be using.</p>
 
-<div class="quote">That's the part that matters. Zero-shot transfer across languages only works at all if the model's representations and the brain's representations are aligned in some shared, language-general format. If they weren't, training on Mandarin would tell you nothing about predicting English.</div>
+    <h2>Brain alignment across 21 languages</h2>
+    <p>The second half of the talk used an encoding-model approach. Native speakers of many different languages listened to translated passages (Alice in Wonderland was one source) during fMRI. A speech-to-text model transcribed the audio, activations were pulled from a multilingual model for those same passages, and a mapping was learned from model activations to brain responses. In total this covered 21 languages across 7 language families, which he described as the largest study of its kind.</p>
+    <p>Two conditions were compared. In the within-language condition, the encoding model was trained and tested on the same language, say 90% of the Mandarin data to train and 10% held out to test. In the across-language condition, the model was trained entirely on one language, say Mandarin, and tested on a completely different language, say English, with zero training data from English. Both conditions produced high, well-above-chance prediction accuracy in the brain's language network. The across-language, zero-shot condition worked almost as well as the within-language one.</p>
 
-<p>His conclusion pushed against a "ships passing in the night" picture where models and brains solve language completely differently under the hood. Instead both seem to converge on a shared, language-general component. He compared it to how birds and planes both fly using totally different physical mechanisms, because they're both shaped by the same environmental constraints, gravity and aerodynamics. Language processing, in both brains and models, may be shaped by similar constraints coming from the structure of communicative environments.</p>
+    <div class="quote">That's the part that matters. Zero-shot transfer across languages only works at all if the model's representations and the brain's representations are aligned in some shared, language-general format. If they weren't, training on Mandarin would tell you nothing about predicting English.</div>
 
-<h2>A couple of questions after</h2>
-<p>One person asked about the fMRI setup: participants each listened to stories in their own native language only, not the same story translated into multiple languages for the same listener. Another pushed on how to know what amount of shared variance actually counts as meaningful similarity rather than noise. He didn't have a hard threshold to offer, just that it was a sizeable share of the explainable variance, not a marginal effect.</p>
+    <p>His conclusion pushed against a "ships passing in the night" picture where models and brains solve language completely differently under the hood. Instead both seem to converge on a shared, language-general component. He compared it to how birds and planes both fly using totally different physical mechanisms, because they're both shaped by the same environmental constraints, gravity and aerodynamics. Language processing, in both brains and models, may be shaped by similar constraints coming from the structure of communicative environments.</p>
 
-<p style="font-size:0.85em;color:#777;font-style:italic;margin-top:2em;border-top:1px solid #ddd;padding-top:10px;">I may have gotten a language or a number slightly wrong here, this was a dense, methods-heavy talk.</p>
+    <h2>A couple of questions after</h2>
+    <p>One person asked about the fMRI setup: participants each listened to stories in their own native language only, not the same story translated into multiple languages for the same listener. Another pushed on how to know what amount of shared variance actually counts as meaningful similarity rather than noise. He didn't have a hard threshold to offer, just that it was a sizeable share of the explainable variance, not a marginal effect.</p>
 
+    </div>
+
+    <p class="footnote">I may have gotten a language or a number slightly wrong here, this was a dense, methods-heavy talk.</p>
+
+    <div class="paper-links">
+      <a href="index.html" class="paper-btn"><i class="fas fa-book-open"></i> Back to all notes</a>
+    </div>
+  </div>
 </body>
+
 </html>

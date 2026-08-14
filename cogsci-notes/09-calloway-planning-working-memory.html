@@ -1,45 +1,52 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Fred Calloway — What working memory limits mean for planning</title>
-<style>
-  body{font-family: Georgia, 'Times New Roman', serif; max-width:720px;margin:40px auto;padding:0 24px;line-height:1.65;color:#222;background:#fdfcf9;}
-  h1{font-size:1.7em;border-bottom:2px solid #333;padding-bottom:10px;margin-bottom:4px;}
-  .meta{color:#666;font-style:italic;margin-bottom:28px;font-size:0.95em;}
-  h2{font-size:1.25em;margin-top:1.8em;color:#333;}
-  ul{padding-left:1.3em;}
-  li{margin-bottom:0.6em;}
-  p{margin:0.9em 0;}
-  .quote{border-left:3px solid #999;padding-left:14px;margin:1.2em 0;color:#444;font-style:italic;}
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Fred Calloway — What working memory limits mean for planning</title>
+  <meta name="author" content="Mandana Samiei">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="../images/personal/mandana-circle.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
+  <div class="content">
+    <p class="note-nav"><a href="index.html"><i class="fas fa-arrow-left"></i> All CogSci 2026 notes</a> &nbsp;&middot;&nbsp; <a href="../index.html"><i class="fas fa-home"></i> Main page</a></p>
 
-<h1>What working memory limits mean for planning</h1>
-<p class="meta">Speaker: Fred Calloway, wrapping up a postdoc across NYU, Harvard, and Princeton before starting as a professor at Dartmouth on July 1st</p>
+    <h1>What working memory limits mean for planning</h1>
+    <p class="meta">Speaker: Fred Calloway, wrapping up a postdoc across NYU, Harvard, and Princeton before starting as a professor at Dartmouth on July 1st &middot; CogSci 2026, Rio de Janeiro</p>
 
-<p>Calloway framed the whole talk around one question: how does a small brain solve problems that, on paper, require searching an enormous decision tree? He came at it through the meta-reasoning tradition, the question of what to think about before acting, treating thinking itself as a form of information-seeking. In the standard telling, a cognitive system pulls in information from perception or memory, builds a task representation like a decision tree, and uses that to guide behavior. The usual move is to put a cost on how much information gets pulled in.</p>
+    <div class="justified-text">
 
-<p>His complaint about that standard picture is that it prices the cost of acquiring information, but says nothing about a much more basic constraint: that whatever representation you build has limited persistence. You can only hold so much of a decision tree in mind before parts of it start slipping away, and he thinks that constraint has been underappreciated.</p>
+    <p>Calloway framed the whole talk around one question: how does a small brain solve problems that, on paper, require searching an enormous decision tree? He came at it through the meta-reasoning tradition, the question of what to think about before acting, treating thinking itself as a form of information-seeking. In the standard telling, a cognitive system pulls in information from perception or memory, builds a task representation like a decision tree, and uses that to guide behavior. The usual move is to put a cost on how much information gets pulled in.</p>
 
-<h2>Breaking the map</h2>
-<p>His task was a decision-tree navigation problem. Start at a root state, find a path that maximizes total reward. The interesting manipulation was displaying the tree's states so that visual closeness on the screen didn't match structural closeness in the tree, states that were neighbors in the actual decision problem were placed far apart visually. In a normal maze or grid task, people can offload a lot of the representational burden onto the display itself. Scrambling the layout this way forces people to actually hold the tree's structure in their heads.</p>
-<p>He first collected this in the lab with real eye tracking, then built an online version using mouse hovering to reveal local information (a state's reward and its neighbors) instead. Aggregate performance was reasonably good, people got fairly close to the best score achievable through unlimited search, but reliably fell short of what a model with only an information cost, and no memory limit, would predict as optimal. People searched for noticeably longer than that model says they need to.</p>
+    <p>His complaint about that standard picture is that it prices the cost of acquiring information, but says nothing about a much more basic constraint: that whatever representation you build has limited persistence. You can only hold so much of a decision tree in mind before parts of it start slipping away, and he thinks that constraint has been underappreciated.</p>
 
-<h2>A model with forgetting</h2>
-<p>His fix was a search model with a decaying memory for tree nodes. The longer since a node was last considered, the more likely it's dropped entirely and has to be rediscovered from scratch. Adding this decay substantially improved the fit to human over-searching, and clearly beat a control model that had the same memory limit but searched in an undirected way. People aren't just forgetting randomly, they're doing directed search under a real capacity constraint.</p>
-<p>Two further signatures backed this up. People's search is heavily weighted toward states close to the root, and their sensitivity to the cumulative value of a path drops sharply the deeper into the tree you look, consistent with deep-tree information being forgotten before it can be used, which an unlimited-memory model doesn't predict at all. And locally, people tend to keep going in a direction after a good outcome, but backtrack, sometimes all the way to the root, after a bad one. The decay model captures that and simpler alternatives don't.</p>
+    <h2>Breaking the map</h2>
+    <p>His task was a decision-tree navigation problem. Start at a root state, find a path that maximizes total reward. The interesting manipulation was displaying the tree's states so that visual closeness on the screen didn't match structural closeness in the tree, states that were neighbors in the actual decision problem were placed far apart visually. In a normal maze or grid task, people can offload a lot of the representational burden onto the display itself. Scrambling the layout this way forces people to actually hold the tree's structure in their heads.</p>
+    <p>He first collected this in the lab with real eye tracking, then built an online version using mouse hovering to reveal local information (a state's reward and its neighbors) instead. Aggregate performance was reasonably good, people got fairly close to the best score achievable through unlimited search, but reliably fell short of what a model with only an information cost, and no memory limit, would predict as optimal. People searched for noticeably longer than that model says they need to.</p>
 
-<div class="quote">He flagged related, ongoing extensions from labmates: one adding a learned, amortized representation component, another building a rate-distortion-theory version of the information cost, and a third person's independently developed model with real structural overlap to his own.</div>
+    <h2>A model with forgetting</h2>
+    <p>His fix was a search model with a decaying memory for tree nodes. The longer since a node was last considered, the more likely it's dropped entirely and has to be rediscovered from scratch. Adding this decay substantially improved the fit to human over-searching, and clearly beat a control model that had the same memory limit but searched in an undirected way. People aren't just forgetting randomly, they're doing directed search under a real capacity constraint.</p>
+    <p>Two further signatures backed this up. People's search is heavily weighted toward states close to the root, and their sensitivity to the cumulative value of a path drops sharply the deeper into the tree you look, consistent with deep-tree information being forgotten before it can be used, which an unlimited-memory model doesn't predict at all. And locally, people tend to keep going in a direction after a good outcome, but backtrack, sometimes all the way to the root, after a bad one. The decay model captures that and simpler alternatives don't.</p>
 
-<h2>A question he left open on purpose</h2>
-<p>In his last few minutes he turned the critique on himself. His model treats "search over a fixed representation" as the thing being contrasted against genuine representation-building, but in his own task the decision tree really is just given by the world. The model is searching through pre-given structure, not constructing anything new. He connected this to Botvinick's value-of-control theory (where task-relevant information is a subset of everything available, and cost is just how much of it you use) and a newer, more iterative version built up online through simulated visual lookahead. That raised the provocative question of whether "attention," to information that's either externally available or internally generated, is doing all the actual work here, without needing a separate notion of "representation" on top of it. He admitted he didn't have an answer, only that he was out of time.</p>
+    <div class="quote">He flagged related, ongoing extensions from labmates: one adding a learned, amortized representation component, another building a rate-distortion-theory version of the information cost, and a third person's independently developed model with real structural overlap to his own.</div>
 
-<h2>What came up in Q&A</h2>
-<p>One person pushed on whether scrambling the layout really removes representation, or just relocates attention from a visually organized target to a spatially scattered one. Calloway leaned toward "it's still attention, just redirected internally," while granting that tasks requiring real physical simulation, predicting how something will fall, say, more clearly need an internally generated representation rather than attention over already-given information. Another question asked whether people do backward planning from the goal state in this task. Mostly no, he said, which he attributed to the model only ever representing the neighborhood of the agent's current location rather than the whole tree at once.</p>
+    <h2>A question he left open on purpose</h2>
+    <p>In his last few minutes he turned the critique on himself. His model treats "search over a fixed representation" as the thing being contrasted against genuine representation-building, but in his own task the decision tree really is just given by the world. The model is searching through pre-given structure, not constructing anything new. He connected this to Botvinick's value-of-control theory (where task-relevant information is a subset of everything available, and cost is just how much of it you use) and a newer, more iterative version built up online through simulated visual lookahead. That raised the provocative question of whether "attention," to information that's either externally available or internally generated, is doing all the actual work here, without needing a separate notion of "representation" on top of it. He admitted he didn't have an answer, only that he was out of time.</p>
 
-<p style="font-size:0.85em;color:#777;font-style:italic;margin-top:2em;border-top:1px solid #ddd;padding-top:10px;">He talked fast through the modeling section, so some of the technical framing here is my best reconstruction, not a direct quote.</p>
+    <h2>What came up in Q&A</h2>
+    <p>One person pushed on whether scrambling the layout really removes representation, or just relocates attention from a visually organized target to a spatially scattered one. Calloway leaned toward "it's still attention, just redirected internally," while granting that tasks requiring real physical simulation, predicting how something will fall, say, more clearly need an internally generated representation rather than attention over already-given information. Another question asked whether people do backward planning from the goal state in this task. Mostly no, he said, which he attributed to the model only ever representing the neighborhood of the agent's current location rather than the whole tree at once.</p>
 
+    </div>
+
+    <p class="footnote">He talked fast through the modeling section, so some of the technical framing here is my best reconstruction, not a direct quote.</p>
+
+    <div class="paper-links">
+      <a href="index.html" class="paper-btn"><i class="fas fa-book-open"></i> Back to all notes</a>
+    </div>
+  </div>
 </body>
+
 </html>

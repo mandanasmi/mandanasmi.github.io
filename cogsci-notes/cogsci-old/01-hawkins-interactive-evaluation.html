@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Robert Hawkins — Interactive, multi-turn evaluation of language models</title>
+<style>
+  body{font-family: Georgia, 'Times New Roman', serif; max-width:720px;margin:40px auto;padding:0 24px;line-height:1.65;color:#222;background:#fdfcf9;}
+  h1{font-size:1.7em;border-bottom:2px solid #333;padding-bottom:10px;margin-bottom:4px;}
+  .meta{color:#666;font-style:italic;margin-bottom:28px;font-size:0.95em;}
+  h2{font-size:1.25em;margin-top:1.8em;color:#333;}
+  ul{padding-left:1.3em;}
+  li{margin-bottom:0.6em;}
+  p{margin:0.9em 0;}
+  .quote{border-left:3px solid #999;padding-left:14px;margin:1.2em 0;color:#444;font-style:italic;}
+</style>
+</head>
+<body>
+
+<h1>Interactive, multi-turn evaluation of language models</h1>
+<p class="meta">Speaker: Robert D. Hawkins</p>
+
+<p>Hawkins opened with a video of engineers demoing a live-translation feature: someone speaking French about cheesecake and omelets while a phone translated in real time. His point was that we're increasingly deploying language models as conversational partners, ones that have to interject and respond in the timing of an actual conversation. But most of the ways we know how to test these models still look like a single question followed by a single answer.</p>
+
+<p>He laid out a framework for thinking about this. Human-like conversation sits in the high-interactivity corner: it unfolds over time, the state at time T depends on the state at T minus one, there are multiple partners, and there's real contingency between you and whoever you're talking to. It's also open-ended. You're not selecting from a pre-generated set of answers, you're generating behavior on the spot. Traditional evaluation, by contrast, has mostly been single-shot (ask a question, get a response, score it), and he wants to push evaluation toward that upper-right, high-interactivity corner instead.</p>
+
+<h2>Reference games</h2>
+<p>He described an iterated reference game inspired by earlier tangram-description work. A describer produces a referring expression to get a listener to pick out one of several very similar images (in this version, elephants), and gets real-time feedback on whether the listener got it right. A frozen model stays bad the whole way through, which isn't surprising since it can't adapt. An adaptive model improves over repeated rounds and gets closer to where people land, but doesn't close the gap entirely. Part of the reason seems to be that when the listener keeps failing, human describers compensate by adjusting their descriptions, and models just don't compensate as well.</p>
+<p>He also mentioned an ongoing effort with collaborators to harmonize a large number of existing reference-game datasets from the literature into one resource, so different stimuli and configurations can all be used for multi-turn evaluation going forward.</p>
+
+<h2>Politeness and feedback-giving</h2>
+<p>A second project, built on an older cognitive-science paradigm (the "how was my presentation" politeness task), gave models a scenario and a set of about eight canned responses to choose from, varying in politeness. A LLaMA-70B model reproduced the human qualitative pattern quite well in that closed-response setting; he showed a plot where the model line tracked the human line pretty closely.</p>
+<p>But when the task changed to a free-response format, just asking "what would you say in this situation," a real gap showed up. People shift from negative-politeness strategies (hedging, "it's not so bad, but...") toward positive-politeness strategies as their actual opinion of the presentation improves. Models kept using negative-politeness strategies well past the point where people had already switched. That difference only showed up once the elicitation format stopped constraining the response space. His broader point: how you elicit a response is itself part of your measurement, and a closed-response test can hide a real behavioral gap.</p>
+
+<h2>The negotiation game</h2>
+<p>The last project was a Catan-style negotiation task. Two players each have a private "project card" telling them what resource combinations earn them points, plus a shared resource pool. They exchange free-form messages, then simultaneously commit to a purchase without seeing what the other player chose beforehand. Sometimes the two players' goals conflict (zero-sum), sometimes they align and there's a cooperative solution available, but neither player knows which situation they're in until they actually talk it out.</p>
+<p>Scored against an oracle with perfect information, models negotiating on their own (no communication allowed) do quite poorly. They "bust" a lot, meaning they overdraw resources they don't actually have. Allowing communication produces a large jump in efficiency, but a gap remains: about 41% of the busted rounds happened right after what looked like a clear verbal agreement. One player says "I'll take X," the other says "okay," and then one of them does something else anyway. Hawkins called this a grounding failure: agents can say the right things without actually tracking who committed to what.</p>
+
+<div class="quote">The big picture point: we need to evaluate trajectories, not just single responses. Frontier labs worry a lot about this in practice. You can test a model in your eval suite, release it, and then people push it somewhere completely out of distribution through a long conversation, and you don't know how it'll behave once it gets there.</div>
+
+<p>He wrapped up by connecting all this to grounding theory (Clark): the idea that conversational partners build and maintain a shared record of commitments, and that a lot of what looks like a communication failure is really a failure to represent and check that shared record. In the Q&A afterward, he pointed to other labs working on this same theme, and floated the idea that models might need something like an explicit "common ground" layer to track commitments and follow up on them, instead of treating each utterance as independent.</p>
+
+<p style="font-size:0.85em;color:#777;font-style:italic;margin-top:2em;border-top:1px solid #ddd;padding-top:10px;">Written up from notes taken during the talk, so the numbers and the exact framing here are close but not guaranteed exact.</p>
+
+</body>
+</html>

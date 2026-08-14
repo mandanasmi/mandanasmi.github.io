@@ -1,55 +1,64 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Framing the Problem — closing workshop panel</title>
-<style>
-  body{font-family: Georgia, 'Times New Roman', serif; max-width:720px;margin:40px auto;padding:0 24px;line-height:1.65;color:#222;background:#fdfcf9;}
-  h1{font-size:1.7em;border-bottom:2px solid #333;padding-bottom:10px;margin-bottom:4px;}
-  .meta{color:#666;font-style:italic;margin-bottom:28px;font-size:0.95em;}
-  h2{font-size:1.25em;margin-top:1.8em;color:#333;}
-  ul{padding-left:1.3em;}
-  li{margin-bottom:0.6em;}
-  p{margin:0.9em 0;}
-  .quote{border-left:3px solid #999;padding-left:14px;margin:1.2em 0;color:#444;font-style:italic;}
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Framing the Problem — closing workshop panel</title>
+  <meta name="author" content="Mandana Samiei">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="../images/personal/mandana-circle.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
+  <div class="content">
+    <p class="note-nav"><a href="index.html"><i class="fas fa-arrow-left"></i> All CogSci 2026 notes</a> &nbsp;&middot;&nbsp; <a href="../index.html"><i class="fas fa-home"></i> Main page</a></p>
 
-<h1>Closing panel: does anything actually solve the frame problem?</h1>
-<p class="meta">Workshop: Framing the Problem</p>
+    <h1>Closing panel: does anything actually solve the frame problem?</h1>
+    <p class="meta">Workshop: Framing the Problem &middot; CogSci 2026, Rio de Janeiro</p>
 
-<h2>Setting up the problem</h2>
-<p>The starting frustration, voiced early on: we have decent normative accounts of what an ideal resource-rational agent would do, and some sense of what it means to reason "locally" and coherently, but there's remarkably little process-level story for what actually happens in between. One speaker put it as a bird's-eye view with no ground truth. We can describe the objective a resource-rational system should be pursuing, but not the mechanism that gets it there moment to moment.</p>
+    <div class="justified-text">
 
-<h2>Have language models already solved it?</h2>
-<p>One person staked out a deliberately provocative position: modern language models have, in effect, already solved the frame problem. They reliably act coherently despite facing an astronomically large space of things they could attend to, and we simply don't have a satisfying account of how. Maybe we never will, beyond "learning objectives and inscrutable linear algebra goo," a phrase that got repeated approvingly by a couple of other people in the room.</p>
-<p>Pushback came quickly. Maybe language models are solving a differently shaped problem than the one humans actually face. Predicting the next token over a massive, general training distribution isn't obviously the same task as acting efficiently in a physical and social world with real stakes and real time pressure. If the constraints are different, a model's fluent output doesn't necessarily tell you the human-relevant version of the problem has been cracked. It might just mean a related, more tractable problem has been.</p>
+    <h2>Setting up the problem</h2>
+    <p>The starting frustration, voiced early on: we have decent normative accounts of what an ideal resource-rational agent would do, and some sense of what it means to reason "locally" and coherently, but there's remarkably little process-level story for what actually happens in between. One speaker put it as a bird's-eye view with no ground truth. We can describe the objective a resource-rational system should be pursuing, but not the mechanism that gets it there moment to moment.</p>
 
-<h2>Two ways a model's success could be real</h2>
-<p>Someone offered a useful distinction. A model's apparent solution to framing could be trivial, brute-force pattern-matching over enough data that it just doesn't fail visibly anymore, or it could be structurally real, meaning the model ends up doing something with relatively few effective computational steps that functions similarly to how a person actually frames a problem. Nobody in the room seemed to think this was resolved either way.</p>
+    <h2>Have language models already solved it?</h2>
+    <p>One person staked out a deliberately provocative position: modern language models have, in effect, already solved the frame problem. They reliably act coherently despite facing an astronomically large space of things they could attend to, and we simply don't have a satisfying account of how. Maybe we never will, beyond "learning objectives and inscrutable linear algebra goo," a phrase that got repeated approvingly by a couple of other people in the room.</p>
+    <p>Pushback came quickly. Maybe language models are solving a differently shaped problem than the one humans actually face. Predicting the next token over a massive, general training distribution isn't obviously the same task as acting efficiently in a physical and social world with real stakes and real time pressure. If the constraints are different, a model's fluent output doesn't necessarily tell you the human-relevant version of the problem has been cracked. It might just mean a related, more tractable problem has been.</p>
 
-<h2>Normative models versus process models</h2>
-<p>A recurring back-and-forth: is it useful to build normative models that explicitly minimize some objective (reward, or reward minus the cost of computation) under a hard resource constraint, like a fixed working-memory capacity? Or should the field lean more on bottom-up, associative process accounts that don't look like optimization at all? One view offered was that these aren't as separable as they sound. A well-specified resource-rational objective actually can be optimized subject to something like a hard working-memory constraint, and that constraint itself becomes a testable psychological claim rather than just a modeling convenience.</p>
+    <h2>Two ways a model's success could be real</h2>
+    <p>Someone offered a useful distinction. A model's apparent solution to framing could be trivial, brute-force pattern-matching over enough data that it just doesn't fail visibly anymore, or it could be structurally real, meaning the model ends up doing something with relatively few effective computational steps that functions similarly to how a person actually frames a problem. Nobody in the room seemed to think this was resolved either way.</p>
 
-<h2>Is representation even separable from search?</h2>
-<p>A good chunk of the discussion circled around whether "framing" (picking or building a representation) and "solving" (searching it) are two different steps at all, or whether they're really the same thing happening repeatedly. One person put this sharply: planning is just framing, over and over again. Rather than committing to one fixed representation and searching it exhaustively, an agent is constantly re-deciding what's relevant just for the next few steps.</p>
+    <h2>Normative models versus process models</h2>
+    <p>A recurring back-and-forth: is it useful to build normative models that explicitly minimize some objective (reward, or reward minus the cost of computation) under a hard resource constraint, like a fixed working-memory capacity? Or should the field lean more on bottom-up, associative process accounts that don't look like optimization at all? One view offered was that these aren't as separable as they sound. A well-specified resource-rational objective actually can be optimized subject to something like a hard working-memory constraint, and that constraint itself becomes a testable psychological claim rather than just a modeling convenience.</p>
 
-<h2>We may not have introspective access to any of this</h2>
-<div class="quote">Several people raised the same worry from different angles. Whatever process actually picks a frame or representation may be mostly invisible to conscious introspection, closer to the insight/aha-moment literature, where people reliably can't report what led up to a sudden shift in how they were seeing a problem.</div>
-<p>Someone mentioned attempts to find speech or behavioral markers that predict an approaching insight before it happens. The honest answer, from that line of work, is that it's really hard. Either the precursor signals are extremely subtle, or whatever's happening beforehand isn't the kind of thing that shows up in language at all.</p>
+    <h2>Is representation even separable from search?</h2>
+    <p>A good chunk of the discussion circled around whether "framing" (picking or building a representation) and "solving" (searching it) are two different steps at all, or whether they're really the same thing happening repeatedly. One person put this sharply: planning is just framing, over and over again. Rather than committing to one fixed representation and searching it exhaustively, an agent is constantly re-deciding what's relevant just for the next few steps.</p>
 
-<h2>Costs, and getting the costs for free</h2>
-<p>Late in the discussion, someone brought the conversation back to resource-rational language directly. The value of a representation is its task utility minus the cost of building or computing it. But people clearly don't pay that cost from scratch every time, they reuse previously learned, "good" representations and heuristics. Some of that reuse is cultural, a chess opening you didn't invent yourself but inherited, and some of it is literally built into the environment, a calendar, a watch. Part of the frame problem, in other words, gets pushed outside the head entirely, into culture and designed tools.</p>
+    <h2>We may not have introspective access to any of this</h2>
+    <div class="quote">Several people raised the same worry from different angles. Whatever process actually picks a frame or representation may be mostly invisible to conscious introspection, closer to the insight/aha-moment literature, where people reliably can't report what led up to a sudden shift in how they were seeing a problem.</div>
+    <p>Someone mentioned attempts to find speech or behavioral markers that predict an approaching insight before it happens. The honest answer, from that line of work, is that it's really hard. Either the precursor signals are extremely subtle, or whatever's happening beforehand isn't the kind of thing that shows up in language at all.</p>
 
-<h2>Open questions, raised but not settled</h2>
-<ul>
-<li>Would experienced meditators, people who've spent thousands of hours doing careful introspection, actually give more reliable insight into how framing happens, or would they just be an unusually well-trained but idiosyncratic population?</li>
-<li>Do findings about visual and attentional framing (people physically covering part of a display to simplify a planning problem) generalize to more abstract domains that aren't visual at all, like social or linguistic framing?</li>
-<li>Are "framing" and "planning" ultimately the same process running at different timescales, or genuinely distinct things that happen to look similar?</li>
-</ul>
+    <h2>Costs, and getting the costs for free</h2>
+    <p>Late in the discussion, someone brought the conversation back to resource-rational language directly. The value of a representation is its task utility minus the cost of building or computing it. But people clearly don't pay that cost from scratch every time, they reuse previously learned, "good" representations and heuristics. Some of that reuse is cultural, a chess opening you didn't invent yourself but inherited, and some of it is literally built into the environment, a calendar, a watch. Part of the frame problem, in other words, gets pushed outside the head entirely, into culture and designed tools.</p>
 
-<p>The workshop organizers closed by thanking all the speakers and panelists, noting that a lot of what got raised here would be written up in an accompanying proceedings volume.</p>
+    <h2>Open questions, raised but not settled</h2>
+    <ul>
+    <li>Would experienced meditators, people who've spent thousands of hours doing careful introspection, actually give more reliable insight into how framing happens, or would they just be an unusually well-trained but idiosyncratic population?</li>
+    <li>Do findings about visual and attentional framing (people physically covering part of a display to simplify a planning problem) generalize to more abstract domains that aren't visual at all, like social or linguistic framing?</li>
+    <li>Are "framing" and "planning" ultimately the same process running at different timescales, or genuinely distinct things that happen to look similar?</li>
+    </ul>
 
+    <p>The workshop organizers closed by thanking all the speakers and panelists, noting that a lot of what got raised here would be written up in an accompanying proceedings volume.</p>
+
+    </div>
+
+    <p class="footnote">This was a loose, cross-talking panel discussion, and I couldn't always tell which panelist was speaking, so I've grouped points by theme rather than by person. Take the attributions loosely.</p>
+
+    <div class="paper-links">
+      <a href="index.html" class="paper-btn"><i class="fas fa-book-open"></i> Back to all notes</a>
+    </div>
+  </div>
 </body>
+
 </html>
